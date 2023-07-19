@@ -1,9 +1,14 @@
 import React from 'react';
-import { Box, Flex, Link, Button, Spacer, Image } from '@chakra-ui/react';
+import { Box, Flex, Link } from '@chakra-ui/react';
 
 const Navbar = () => {
   return (
-    <Box bg="black" p={4} blur={3} backdropBlur={4}>
+    <Box
+      bgGradient='linear(to-r, #3D3D3D, #0F0F0F)'
+      p={4}
+      backdropFilter="blur(5px)" // Apply the blur effect
+      borderRadius="10px"
+    >
       <Flex alignItems="center" justifyContent="space-between" maxWidth="800px" mx="auto">
         <Box>
           <Link href="/" color="white" fontSize="lg" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
