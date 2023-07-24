@@ -5,11 +5,9 @@ const Navbar = () => {
   return (
     <Box
       bgGradient='linear(to-r, #3D3D3D, #0F0F0F)'
-      p={4}
-      backdropFilter="blur(5px)" // Apply the blur effect
-      borderRadius="10px"
+      p={5}
     >
-      <Flex alignItems="center" justifyContent="space-between" maxWidth="800px" mx="auto">
+      <Flex alignItems="center" justifyContent="space-between" maxWidth="35%" mx="auto">
         <Box>
           <Link href="/" color="white" fontSize="lg" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
             TM.
