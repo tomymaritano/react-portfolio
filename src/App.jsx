@@ -1,19 +1,23 @@
 import * as React from "react";
 import NavBar from "./assets/nav/nav";
 import Footer from "./assets/footer/footer";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, CSSReset } from "@chakra-ui/react";
+import theme from "./extendTheme";
+
+import "@fontsource/raleway/400.css";
+import "@fontsource/open-sans/700.css";
 
 import {
   Box,
   Container,
   Stack,
   Heading,
+  Link,
   Text,
   Image,
-  Link,
-  Button,
-  ListItem,
   List,
+  ListItem,
+  Button,
 } from "@chakra-ui/react";
 
 import { FaGithub, FaTwitter, FaLinkedin, FaTerminal } from "react-icons/fa";
@@ -21,51 +25,39 @@ import { FaGithub, FaTwitter, FaLinkedin, FaTerminal } from "react-icons/fa";
 function App() {
   // 2. Wrap ChakraProvider at the root of your app
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <NavBar />
-      <Container
-        display={"flex"}
-        flexDirection={"row"}
-        alignItems={"center"}
-        alignContent={"center"}
-        justifyContent={"space-evenly"}
-        justifyItems={"center"}
-        minW="60%"
-        p="3%"
-        centerContent
-      >
-        <Box maxW={"sm"} p={1}>
-          <Stack spacing={2}>
-            <Heading as="h1">Hi there !</Heading>
-            <Text
-              color={"teal"}
-              fontFamily={"heading"}
-              fontWeight={"extrabold"}
-              fontSize="2xl"
-            >
-              I'M TOMY MARITANO
+      <Container p={4}>
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-around"}
+          p={"3%"}
+        >
+          <Stack spacing={1} p={3}>
+            <Heading as={"h1"} size={"2xl"}>
+              Tomy Maritano
+            </Heading>
+            <Text fontSize="xl" fontFamily={""}>
+              Developer
             </Text>
-            <Text fontSize="1xl">Developer</Text>
           </Stack>
-        </Box>
-        <Box maxW={"sm"}>
           <Image
             src="https://media.licdn.com/dms/image/D4D03AQE5Is75WdAkjQ/profile-displayphoto-shrink_800_800/0/1681757745412?e=1695254400&v=beta&t=U7TgFx6hncRJ1-aJLzbSe3WJr1MxQx58jJCuK8iYeKk"
             alt="img"
             objectFit={"cover"}
             borderRadius={"full"}
-            boxSize={"120px"}
+            boxSize={"20%"}
           />
         </Box>
-      </Container>
-      <Container
-        border={1}
-        minW="60%"
-        p={"3%"}
-        centerContent
-      >
-        <Box maxW={"md"} p={'3%'}>
-          <Heading as="h3" mb={"3%"}>
+        <Box p={"3%"}>
+          <Heading
+            as="h3"
+            size={"lg"}
+            mb={"3%"}
+            textDecoration={"underline"}
+            textDecorationColor={"darkgrey"}
+          >
             Work
           </Heading>
           <Text>
@@ -77,7 +69,7 @@ function App() {
             deliver impactful and meaningful projects that drive positive
             change.
           </Text>
-          <Box maxW={'sm'} p={'3%'}>
+          <Box m={3}>
             <Stack spacing={4} direction={"row"} align={"center"}>
               <Button colorScheme="teal" size="sm" variant="solid">
                 My portfolio
@@ -85,37 +77,84 @@ function App() {
             </Stack>
           </Box>
         </Box>
-      </Container>
-      <Container minW={"60%"} p={"3%"} bgColor={"blue.200"} centerContent>
-        <Box maxW={"sm"} p={5} bgColor={"blue.400"}>
-          <Heading as={"h3"} mb={"3%"}>
-            Find me on
+        <Box p={"3%"}>
+          <Heading
+            as="h3"
+            size={"lg"}
+            mb={"3%"}
+            textDecoration={"underline"}
+            textDecorationColor={"darkgrey"}
+          >
+            Bio
           </Heading>
-          <Text>Feel free to contact me</Text>
-          <Text>Im gonna reach you as soon as possible</Text>
-          <Box maxW={"sm"} centerContent bgColor={"blackAlpha.100"} p={4}>
-            <List
-              display={"flex"}
-              justifyItems={"center"}
-              alignContent={"center"}
-              justifyContent={"center"}
-              alignItems={"center"}
-            >
-              <ListItem p={2}>
-                <FaGithub size={"32"} />
-              </ListItem>
-              <ListItem p={2}>
-                <FaTwitter size={"32"} />
-              </ListItem>
-              <ListItem p={2}>
-                <FaLinkedin size={"32"} />
-              </ListItem>
-              {/* You can also use custom icons from react-icons */}
-              <ListItem p={2}>
-                <FaTerminal size={"32"} />
-              </ListItem>
-            </List>
-          </Box>
+          <Text>1994 - Was born in Rosario, Santa Fe, Argentina</Text>
+          <Text>2013 - Finished the High-school degree</Text>
+          <Text>
+            2016 - Started to studying Web Design and App development at Escuela
+            DaVinci
+          </Text>
+          <Text>2020 - Front end development at Coderhouse </Text>
+          <Text>2021 - JavaScript at Coderhouse</Text>
+          <Text>2022 - React JS at Coderhouse</Text>
+          <Text>2023 to present - Startup creator.</Text>
+        </Box>
+
+        <Box p={5}>
+          <Heading
+            as={"h3"}
+            size={"lg"}
+            mb={"3%"}
+            textDecoration={"underline"}
+            textDecorationColor={"darkgrey"}
+          >
+            On the web
+          </Heading>
+          <List>
+            <ListItem>
+              <Link href="https://github.com/craftzdog" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<FaTerminal />}
+                >
+                  @craftzdog
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://twitter.com/inkdrop_app" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<FaGithub />}
+                >
+                  @tomymaritano
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://twitter.com/craftzdog" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<FaTwitter />}
+                >
+                  @tomymaritano
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://instagram.com/craftzdog" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<FaLinkedin />}
+                >
+                  @tomymaritano
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
         </Box>
       </Container>
       <Footer />
