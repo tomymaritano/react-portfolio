@@ -122,7 +122,7 @@ function App() {
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://twitter.com/inkdrop_app" target="_blank">
+              <Link href="https://github.com/tomymaritano" target="_blank">
                 <Button
                   variant="ghost"
                   colorScheme="teal"
@@ -133,7 +133,7 @@ function App() {
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://twitter.com/craftzdog" target="_blank">
+              <Link href="https://twitter.com/tomymaritano" target="_blank">
                 <Button
                   variant="ghost"
                   colorScheme="teal"
@@ -144,7 +144,7 @@ function App() {
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://instagram.com/craftzdog" target="_blank">
+              <Link href="https://instagram.com/tomymaritano" target="_blank">
                 <Button
                   variant="ghost"
                   colorScheme="teal"
