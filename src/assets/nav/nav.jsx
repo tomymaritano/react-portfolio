@@ -10,7 +10,7 @@ const Navbar = () => {
       <Flex alignItems="center" justifyContent="space-between" maxWidth="35%" mx="auto">
         <Box>
           <Link href="/" color="white" fontSize="lg" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
-            TM.
+            Tomy Maritano.
           </Link>
         </Box>
         <Box>

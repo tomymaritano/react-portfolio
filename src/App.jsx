@@ -1,11 +1,8 @@
 import * as React from "react";
 import NavBar from "./assets/nav/nav";
-import Footer from "./assets/footer/footer";
 import { ChakraProvider, CSSReset } from "@chakra-ui/react";
 import theme from "./extendTheme";
 
-import "@fontsource/raleway/400.css";
-import "@fontsource/open-sans/700.css";
 
 import {
   Box,
@@ -20,7 +17,15 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-import { FaGithub, FaTwitter, FaLinkedin, FaTerminal } from "react-icons/fa";
+import {
+  FaGithub,
+  FaTwitter,
+  FaLinkedin,
+  FaTerminal,
+  FaMailBulk,
+  FaArrowAltCircleRight,
+  FaArrowRight,
+} from "react-icons/fa";
 
 function App() {
   // 2. Wrap ChakraProvider at the root of your app
@@ -53,7 +58,7 @@ function App() {
         <Box p={"3%"}>
           <Heading
             as="h3"
-            size={"lg"}
+            size={"md"}
             mb={"3%"}
             textDecoration={"underline"}
             textDecorationColor={"darkgrey"}
@@ -71,7 +76,12 @@ function App() {
           </Text>
           <Box m={3}>
             <Stack spacing={4} direction={"row"} align={"center"}>
-              <Button colorScheme="teal" size="sm" variant="solid">
+              <Button
+                rightIcon={<FaArrowRight />}
+                bgColor="teal.200"
+                size="md"
+                variant="solid"
+              >
                 My portfolio
               </Button>
             </Stack>
@@ -80,29 +90,47 @@ function App() {
         <Box p={"3%"}>
           <Heading
             as="h3"
-            size={"lg"}
+            size={"md"}
             mb={"3%"}
             textDecoration={"underline"}
             textDecorationColor={"darkgrey"}
           >
             Bio
           </Heading>
-          <Text>1994 - Was born in Rosario, Santa Fe, Argentina</Text>
-          <Text>2013 - Finished the High-school degree</Text>
           <Text>
-            2016 - Started to studying Web Design and App development at Escuela
-            DaVinci
+            <Text as={"b"}>1994</Text> - Was born in Rosario, Santa Fe,
+            Argentina.
           </Text>
-          <Text>2020 - Front end development at Coderhouse </Text>
-          <Text>2021 - JavaScript at Coderhouse</Text>
-          <Text>2022 - React JS at Coderhouse</Text>
+          <Text>2013 - Finished High-school degree</Text>
+          <Text>
+            2016 - Started to studying Web Design and App development at{" "}
+            <Link href="https://davinci.edu.ar/" color={'plum'}>Escuela DaVinci</Link>
+          </Text>
+          <Text>
+            2020 - Front end development at{" "}
+            <Link href="https://coderhouse.es" color={"plum"}>
+              Coderhouse
+            </Link>{" "}
+          </Text>
+          <Text>
+            2021 - JavaScript at{" "}
+            <Link href="https://coderhouse.es" color={"plum"}>
+              Coderhouse
+            </Link>
+          </Text>
+          <Text>
+            2022 - React JS at{" "}
+            <Link href="https://coderhouse.es" color={"plum"}>
+              Coderhouse
+            </Link>
+          </Text>
           <Text>2023 to present - Startup creator.</Text>
         </Box>
 
         <Box p={5}>
           <Heading
             as={"h3"}
-            size={"lg"}
+            size={"md"}
             mb={"3%"}
             textDecoration={"underline"}
             textDecorationColor={"darkgrey"}
@@ -115,9 +143,10 @@ function App() {
                 <Button
                   variant="ghost"
                   colorScheme="teal"
+                  color={"teal.300"}
                   leftIcon={<FaTerminal />}
                 >
-                  @craftzdog
+                  @tomymaritano
                 </Button>
               </Link>
             </ListItem>
@@ -126,6 +155,7 @@ function App() {
                 <Button
                   variant="ghost"
                   colorScheme="teal"
+                  color={"teal.300"}
                   leftIcon={<FaGithub />}
                 >
                   @tomymaritano
@@ -137,6 +167,7 @@ function App() {
                 <Button
                   variant="ghost"
                   colorScheme="teal"
+                  color={"teal.300"}
                   leftIcon={<FaTwitter />}
                 >
                   @tomymaritano
@@ -148,6 +179,7 @@ function App() {
                 <Button
                   variant="ghost"
                   colorScheme="teal"
+                  color={"teal.300"}
                   leftIcon={<FaLinkedin />}
                 >
                   @tomymaritano
@@ -156,8 +188,37 @@ function App() {
             </ListItem>
           </List>
         </Box>
+        <Box p={"3%"}>
+          <Heading
+            as="h3"
+            size={"md"}
+            mb={"3%"}
+            textDecoration={"underline"}
+            textDecorationColor={"darkgrey"}
+          >
+            Newsletter
+          </Heading>
+          <Text>
+            Join me on a behind-the-scenes coding journey. Weekly updates on
+            projects, tutorials, and videos
+          </Text>
+          <Box m={3}>
+            <Stack spacing={4} direction={"row"} align={"center"}>
+              <Button
+                leftIcon={<FaMailBulk />}
+                bgColor="teal.200"
+                size="md"
+                variant="solid"
+              >
+                Sign up to my newsletter here
+              </Button>
+            </Stack>
+          </Box>
+        </Box>
+        <Box color={"gray"} p={3} display={"flex"} justifyContent={"center"}>
+          © 2023 Tomy Maritano. All Rights Reserved.
+        </Box>
       </Container>
-      <Footer />
     </ChakraProvider>
   );
 }
