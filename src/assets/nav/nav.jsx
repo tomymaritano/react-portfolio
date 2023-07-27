@@ -1,31 +1,76 @@
-import React from 'react';
-import { Box, Flex, Link } from '@chakra-ui/react';
+import React from "react";
+import {
+  Box,
+  Flex,
+  Spacer,
+  IconButton,
+  useDisclosure,
+  VStack,
+  Button,
+  HStack,
+  CloseButton,
+} from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const closeMobileMenu = () => {
+    if (isOpen) {
+      onClose();
+    }
+  };
   return (
-    <Box
-      bgGradient='linear(to-r, #3D3D3D, #0F0F0F)'
-      p={5}
-    >
-      <Flex alignItems="center" justifyContent="space-between" maxWidth="35%" mx="auto">
+    <Box p={4}>
+      <Flex alignItems="center">
         <Box>
-          <Link href="/" color="white" fontSize="lg" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
-            Tomy Maritano.
-          </Link>
+          {/* Logo o título del Navbar */}
+          <span>TM.</span>
         </Box>
-        <Box>
-          <Link href="/inicio" color="white" mr={4} _hover={{ textDecoration: 'none' }}>
-            Inicio
-          </Link>
-          <Link href="/servicios" color="white" mr={4} _hover={{ textDecoration: 'none' }}>
-            Servicios
-          </Link>
-          <Link href="/contacto" color="white" mr={4} _hover={{ textDecoration: 'none' }}>
-            Contacto
-          </Link>
-          {/* Puedes agregar más enlaces aquí */}
+        <Spacer />
+        {/* Menú para dispositivos móviles */}
+        <Box display={{ base: "block", md: "none" }}>
+          <IconButton
+            icon={<HamburgerIcon />}
+            size="md"
+            onClick={isOpen ? onClose : onOpen}
+            aria-label="Abrir menú"
+          />
         </Box>
+        {/* Menú para pantallas más grandes */}
+        <HStack spacing={8} display={{ base: "none", md: "flex" }}>
+          <span>Inicio</span>
+          <span>Productos</span>
+          <span>Servicios</span>
+          <span>Contacto</span>
+        </HStack>
       </Flex>
+      {/* Menú desplegable para dispositivos móviles */}
+      <VStack
+        pos="absolute"
+        top={0}
+        left={0}
+        right={0}
+        display={{ base: isOpen ? "flex" : "none", md: "none" }}
+        flexDirection="column"
+        p={2}
+        pb={4}
+        m={2}
+        bg="black"
+        boxShadow="md"
+      >
+        <span>Inicio</span>
+        <span>Productos</span>
+        <span>Servicios</span>
+        <span>Contacto</span>
+        {/* Botón para cerrar el menú móvil */}
+        <IconButton
+          icon={<CloseButton />}
+          size="md"
+          onClick={isOpen ? onClose : onOpen}
+          aria-label="Abrir menú"
+        />
+      </VStack>
     </Box>
   );
 };
