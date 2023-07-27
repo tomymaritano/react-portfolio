@@ -1,6 +1,6 @@
 import * as React from "react";
 import NavBar from "./assets/nav/nav";
-import { ChakraProvider, CSSReset } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./extendTheme";
 
 
@@ -23,7 +23,6 @@ import {
   FaLinkedin,
   FaTerminal,
   FaMailBulk,
-  FaArrowAltCircleRight,
   FaArrowRight,
 } from "react-icons/fa";
 

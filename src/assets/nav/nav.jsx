@@ -6,7 +6,6 @@ import {
   IconButton,
   useDisclosure,
   VStack,
-  Button,
   HStack,
   CloseButton,
 } from "@chakra-ui/react";
