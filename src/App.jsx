@@ -47,7 +47,7 @@ function App() {
             </Text>
           </Stack>
           <Image
-            src="https://media.licdn.com/dms/image/D4D03AQE5Is75WdAkjQ/profile-displayphoto-shrink_800_800/0/1681757745412?e=1695254400&v=beta&t=U7TgFx6hncRJ1-aJLzbSe3WJr1MxQx58jJCuK8iYeKk"
+            src="https://media.licdn.com/dms/image/D4E03AQGWEQKmeNWKYg/profile-displayphoto-shrink_200_200/0/1690562896887?e=1696464000&v=beta&t=USwrdAbI_hMRIL2ZWLN-xn28OznrAinwHuvdsjod0gw"
             alt="img"
             objectFit={"cover"}
             borderRadius={"full"}
@@ -73,7 +73,7 @@ function App() {
             deliver impactful and meaningful projects that drive positive
             change.
           </Text>
-          <Box m={3}>
+          <Box m={3} centerContext>
             <Stack spacing={4} direction={"row"} align={"center"}>
               <Button
                 rightIcon={<FaArrowRight />}

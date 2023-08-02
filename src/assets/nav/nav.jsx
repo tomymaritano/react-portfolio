@@ -14,11 +14,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const closeMobileMenu = () => {
-    if (isOpen) {
-      onClose();
-    }
-  };
+
   return (
     <Box p={4}>
       <Flex alignItems="center">
