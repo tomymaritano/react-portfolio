@@ -5,6 +5,7 @@ import {
   Spacer,
   IconButton,
   useDisclosure,
+  Link,
   VStack,
   HStack,
   CloseButton,
@@ -13,7 +14,6 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
 
   return (
     <Box p={4}>
@@ -34,10 +34,18 @@ const Navbar = () => {
         </Box>
         {/* Menú para pantallas más grandes */}
         <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-          <span>Inicio</span>
-          <span>Productos</span>
-          <span>Servicios</span>
-          <span>Contacto</span>
+          <span>
+            <Link href="./app.jsx">Home</Link>
+          </span>
+          <span>
+            <Link href="#">About me</Link>
+          </span>
+          <span>
+            <Link href="#">Projects</Link>
+          </span>
+          <span>
+            <Link href="#">Contact</Link>
+          </span>
         </HStack>
       </Flex>
       {/* Menú desplegable para dispositivos móviles */}
@@ -54,10 +62,18 @@ const Navbar = () => {
         bg="black"
         boxShadow="md"
       >
-        <span>Inicio</span>
-        <span>Productos</span>
-        <span>Servicios</span>
-        <span>Contacto</span>
+        <span>
+          <Link href="./app.jsx">Home</Link>
+        </span>
+        <span>
+          <Link href="#">About me</Link>
+        </span>
+        <span>
+          <Link href="#">Projects</Link>
+        </span>
+        <span>
+          <Link href="#">Contact</Link>
+        </span>
         {/* Botón para cerrar el menú móvil */}
         <IconButton
           icon={<CloseButton />}

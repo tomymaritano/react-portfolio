@@ -1,8 +1,8 @@
 import * as React from "react";
+import theme from "./extendTheme";
 import NavBar from "./assets/nav/nav";
 import { ChakraProvider } from "@chakra-ui/react";
-import theme from "./extendTheme";
-
+import Developer from "./useTypingEffect/developerEffect";
 
 import {
   Box,
@@ -42,9 +42,7 @@ function App() {
             <Heading as={"h1"} size={"2xl"}>
               Tomy Maritano
             </Heading>
-            <Text fontSize="xl" fontFamily={""}>
-              Developer
-            </Text>
+            <Developer />
           </Stack>
           <Image
             src="https://media.licdn.com/dms/image/D4E03AQGWEQKmeNWKYg/profile-displayphoto-shrink_200_200/0/1690562896887?e=1696464000&v=beta&t=USwrdAbI_hMRIL2ZWLN-xn28OznrAinwHuvdsjod0gw"
@@ -103,7 +101,9 @@ function App() {
           <Text>2013 - Finished High-school degree</Text>
           <Text>
             2016 - Started to studying Web Design and App development at{" "}
-            <Link href="https://davinci.edu.ar/" color={'plum'}>Escuela DaVinci</Link>
+            <Link href="https://davinci.edu.ar/" color={"plum"}>
+              Escuela DaVinci
+            </Link>
           </Text>
           <Text>
             2020 - Front end development at{" "}
@@ -124,6 +124,22 @@ function App() {
             </Link>
           </Text>
           <Text>2023 to present - Startup creator.</Text>
+        </Box>
+        <Box p={"3%"}>
+          <Heading
+            as="h3"
+            size={"md"}
+            mb={"3%"}
+            textDecoration={"underline"}
+            textDecorationColor={"darkgrey"}
+          >
+            I ♥
+          </Heading>
+          <Text>
+            <Text as={"b"}>
+              Droning, Gaming, Reading, Sports, Music & Cinema
+            </Text>
+          </Text>
         </Box>
 
         <Box p={5}>
