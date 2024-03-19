@@ -1,4 +1,4 @@
-import { Heading, Text, Box, Image, Button, Code } from "@chakra-ui/react";
+import { Heading, Text, Box, Button, Code } from "@chakra-ui/react";
 import HoverImage from "./Image/ImageHover";
 
 

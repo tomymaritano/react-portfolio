@@ -9,6 +9,7 @@ import {
   SimpleGrid,
   Select,
   HStack,
+  Switch,
   // Stack,
   // FormLabel,
   // Switch,
@@ -40,9 +41,9 @@ const Projects = () => {
   }, []);
   const [showForks, setShowForks] = useState(false);
 
-  // const handleShowForksChange = () => {
-  //   setShowForks(!showForks);
-  // };
+  const handleShowForksChange = () => {
+    setShowForks(!showForks);
+  };
 
   // Esto se calcula cada vez que 'projects' o 'selectedTech' cambian
   const allTechnologies = [
@@ -73,7 +74,7 @@ const Projects = () => {
         justifyContent={"space-between"}
         alignItems={"center"}
       >
-        {/* <Box display={'flex'} alignItems={'center'} gap={1}>
+        <Box display={'flex'} alignItems={'center'} gap={1}>
         <Text htmlFor="fork-switch">Forks</Text>
         <Switch
           color="gray"
@@ -81,7 +82,7 @@ const Projects = () => {
           onChange={handleShowForksChange}
           isChecked={showForks}
         />
-        </Box> */}
+        </Box>
 
         <Select
           onChange={handleTechChange}
