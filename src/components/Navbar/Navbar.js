@@ -22,7 +22,7 @@ const Navbar = () => {
     <Flex
       position={"sticky"}
       top={0}
-      p={1}
+      p={3}
       alignItems={"center"}
       justifyContent={["space-between", "space-evenly"]} // Primero móvil, luego web
       backdropFilter="blur(10px)"
