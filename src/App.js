@@ -18,7 +18,7 @@ function App() {
         </Box>
         <Navbar />
         <Container maxW={"3xl"}>
-<Scene />
+          <Scene />
           <Perfil />
           <About />
           <Skills />

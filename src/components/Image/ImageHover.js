@@ -4,7 +4,8 @@ import { Box, Image } from '@chakra-ui/react';
 const HoverImage = ({ src, alt }) => {
   return (
     <Box
-      maxW="150px"
+    
+      maxW={"15vh"}
       borderWidth="1px"
       borderRadius="full"
       overflow="hidden"
