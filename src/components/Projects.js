@@ -9,9 +9,9 @@ import {
   SimpleGrid,
   Select,
   HStack,
-  Stack,
-  FormLabel,
-  Switch,
+  // Stack,
+  // FormLabel,
+  // Switch,
 } from "@chakra-ui/react";
 
 
@@ -39,9 +39,9 @@ const Projects = () => {
   }, []);
   const [showForks, setShowForks] = useState(false);
 
-  const handleShowForksChange = () => {
-    setShowForks(!showForks);
-  };
+  // const handleShowForksChange = () => {
+  //   setShowForks(!showForks);
+  // };
 
   // Esto se calcula cada vez que 'projects' o 'selectedTech' cambian
   const allTechnologies = [
