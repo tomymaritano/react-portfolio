@@ -37,7 +37,7 @@ const Projects = () => {
       })
       .catch((error) => console.error("Error fetching projects:", error));
   }, []);
-  const [showForks, setShowForks] = useState(false);
+  const [showForks] = useState(false);
 
   // const handleShowForksChange = () => {
   //   setShowForks(!showForks);
