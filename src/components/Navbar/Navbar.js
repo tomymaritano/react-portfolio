@@ -41,7 +41,7 @@ const Navbar = () => {
             bg={"#FBD38D"}
             aria-label="Options"
             icon={<SunIcon />}
-            variant="outline"
+            variant=""
             mr={1}
             _hover={{ borderColor: "#FBD38D", bg: "#FBD38D" }}
           />
