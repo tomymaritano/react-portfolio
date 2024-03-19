@@ -20,6 +20,7 @@ import TextAnimation from "../Bienvenida/Text";
 const Navbar = () => {
   return (
     <Flex
+      zIndex={1}
       position={"sticky"}
       top={0}
       p={3}
@@ -37,7 +38,7 @@ const Navbar = () => {
           <IconButton
             size={"sm"}
             color={"gray"}
-            bg={'#FBD38D'}
+            bg={"#FBD38D"}
             aria-label="Options"
             icon={<SunIcon />}
             variant="outline"

@@ -9,12 +9,13 @@ const TextAnimation = () => {
 
     gsap.to(".text", { 
       duration: 2, 
-      text: "Tomy maritano",
-      ease: "none"
+      text: "Tomy Maritano",
+      ease: "power2",
+      repeat: Infinity,
     });
   }, []);
 
-  return <Box className="text" style={{fontSize: "12px", fontWeight: "bold", fontFamily: "monospace"}}></Box>;
+  return <Box width={'200px'} className="text" style={{fontSize: "12px", fontWeight: "bold", fontFamily: "monospace"}}></Box>;
 };
 
 export default TextAnimation;

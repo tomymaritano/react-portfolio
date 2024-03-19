@@ -7,27 +7,26 @@ import About from "./components/About";
 import Perfil from "./components/Perfil";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar/Navbar";
-import { ThemeProvider } from "./ThemeContext";
+import Scene from "./components/Bienvenida/ThreeJS";
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <ThemeProvider>
-        <Box width={"100%"} height={"100%"} bg={"white"} color={"black"}>
-          <Box bg="green.400" w="100%" p={1} color="white" textAlign={"center"}>
-            This is the Box
-          </Box>
-          <Navbar />
-          <Container maxW={"3xl"}>
-            <Perfil />
-            <About />
-            <Skills />
-            <Languages />
-            <Projects />
-            <Footer />
-          </Container>
+      <Box width={"100%"} height={"100%"} bg={"white"} color={"black"}>
+        <Box bg="green.400" w="100%" p={1} color="white" textAlign={"center"}>
+          This is the Box
         </Box>
-      </ThemeProvider>
+        <Navbar />
+        <Container maxW={"3xl"}>
+<Scene />
+          <Perfil />
+          <About />
+          <Skills />
+          <Languages />
+          <Projects />
+          <Footer />
+        </Container>
+      </Box>
     </ChakraProvider>
   );
 }

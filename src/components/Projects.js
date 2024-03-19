@@ -13,6 +13,7 @@ import {
   // FormLabel,
   // Switch,
 } from "@chakra-ui/react";
+// import ProjectBorderHover from "./ProjectBorderHover.css";
 
 
 const Projects = () => {
@@ -67,7 +68,6 @@ const Projects = () => {
         </Heading>
       </HStack>
 
-
       <Box
         display={"flex"}
         justifyContent={"space-between"}
@@ -105,10 +105,16 @@ const Projects = () => {
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={5} marginTop={4}>
         {filteredProjects.map((project, index) => (
           <Box
+          id="projects-list"
             key={index}
             border="1px solid rgb(232, 232, 232)"
             borderRadius="md"
             p={4}
+            // _hover={{
+            //   bg: "whiteAlpha.400",
+            //   borderColor: "gray",
+            //   transition: "transform 0.5s", // Hace la transición más suave}}
+            // }}
           >
             <Heading size="sm" paddingBottom={2}>
               <a
@@ -126,6 +132,7 @@ const Projects = () => {
                   <Tag
                     size="sm"
                     variant="subtle"
+                    fontSize={"12px"}
                     color={"black"}
                     border={"1px solid"}
                     borderColor={"#e8e8e8"}
