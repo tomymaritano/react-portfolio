@@ -56,7 +56,7 @@ const Navbar = () => {
       borderBottom={"none"}
       bg={
         colorMode === "dark"
-          ? "rgb(32, 32, 36, 0.8)"
+          ? "rgb(26, 31, 45, 0.8)"
           : "rgb(255, 255, 255, 0.8)"
       }
     >
