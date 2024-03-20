@@ -1,4 +1,12 @@
-import { Box, Code, HStack, Heading, IconButton, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Code,
+  HStack,
+  Heading,
+  IconButton,
+  Link,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -26,30 +34,39 @@ const About = () => {
         <Text fontSize={"14px"}>Copenhagen, Denmark.</Text>
       </HStack>
       <HStack>
-        <IconButton
-          size={"sm"}
-          border={"1px solid"}
-          borderColor={"#e8e8e8"}
-          color={"gray"}
-          aria-label="Search database"
-          icon={<FaGithub />}
-        />
-        <IconButton
-          size={"sm"}
-          border={"1px solid"}
-          borderColor={"#e8e8e8"}
-          color={"gray"}
-          aria-label="Search database"
-          icon={<FaLinkedin />}
-        />
-        <IconButton
-          size={"sm"}
-          border={"1px solid"}
-          borderColor={"#e8e8e8"}
-          color={"gray"}
-          aria-label="Search database"
-          icon={<MdEmail />}
-        />
+        <Link href="https://github.com/tomymaritano" isExternal>
+          {" "}
+          <IconButton
+            size={"sm"}
+            border={"1px solid"}
+            borderColor={"#e8e8e8"}
+            color={"gray"}
+            aria-label="Search database"
+            icon={<FaGithub />}
+          />
+        </Link>
+
+        <Link href="https://www.linkedin.com/in/tomymaritano/" isExternal>
+          <IconButton
+            size={"sm"}
+            border={"1px solid"}
+            borderColor={"#e8e8e8"}
+            color={"gray"}
+            aria-label="Search database"
+            icon={<FaLinkedin />}
+          />
+        </Link>
+
+        <Link href="mailto:tomymaritano@gmail.com" isExternal>
+          <IconButton
+            size={"sm"}
+            border={"1px solid"}
+            borderColor={"#e8e8e8"}
+            color={"gray"}
+            aria-label="Search database"
+            icon={<MdEmail />}
+          />
+        </Link>
       </HStack>
     </Box>
   );

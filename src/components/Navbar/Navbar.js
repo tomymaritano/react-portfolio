@@ -16,6 +16,7 @@ import {
   SunIcon,
 } from "@chakra-ui/icons";
 import TextAnimation from "../Bienvenida/Text";
+import { FaBlog } from "react-icons/fa";
 
 const Navbar = () => {
   return (
@@ -55,17 +56,11 @@ const Navbar = () => {
             variant="outline"
           />
           <MenuList>
-            <MenuItem icon={<AddIcon />} command="⌘T">
-              New Tab
+            <MenuItem icon={<FaBlog />}>
+              Blog
             </MenuItem>
-            <MenuItem icon={<ExternalLinkIcon />} command="⌘N">
-              New Window
-            </MenuItem>
-            <MenuItem icon={<RepeatIcon />} command="⌘⇧N">
-              Open Closed Tab
-            </MenuItem>
-            <MenuItem icon={<EditIcon />} command="⌘O">
-              Open File...
+            <MenuItem icon={<ExternalLinkIcon />}>
+              Videogames
             </MenuItem>
           </MenuList>
         </Menu>
