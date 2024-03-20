@@ -9,10 +9,7 @@ import {
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
-  AddIcon,
   ExternalLinkIcon,
-  RepeatIcon,
-  EditIcon,
   SunIcon,
 } from "@chakra-ui/icons";
 import TextAnimation from "../Bienvenida/Text";
