@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, Heading, Tag, Wrap, WrapItem, Image, Code } from "@chakra-ui/react";
+import { Box, Heading, Tag, Wrap, WrapItem, Image, Code, useColorMode } from "@chakra-ui/react";
 
 const Skills = () => {
+  const colorMode = useColorMode();
   // Define tus habilidades
   const skills = [
     "MongoDB",
@@ -19,6 +20,7 @@ const Skills = () => {
   ];
 
   return (
+
     <Box pb={4}>
       <Heading fontFamily={"monospace"} size={"md"} as={"h3"} pb={4}>
         Skills
@@ -38,7 +40,7 @@ const Skills = () => {
             <Tag
               size="md"
               variant="subtle"
-              color={"black"}
+              color={colorMode === 'light' ? 'black' : 'white'}
               border={"1px solid"}
               borderColor={"#e8e8e8"}
             >

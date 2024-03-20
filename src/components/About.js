@@ -6,6 +6,7 @@ import {
   IconButton,
   Link,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -13,6 +14,7 @@ import { MdEmail } from "react-icons/md";
 import { TiWorld } from "react-icons/ti";
 
 const About = () => {
+  const colorMode = useColorMode()
   return (
     <Box pb={4}>
       <Heading fontFamily={"monospace"} fontSize={"20px"} pb={4}>
@@ -40,7 +42,7 @@ const About = () => {
             size={"sm"}
             border={"1px solid"}
             borderColor={"#e8e8e8"}
-            color={"gray"}
+            color={colorMode === 'light' ? 'black' : 'white'}
             aria-label="Search database"
             icon={<FaGithub />}
           />
@@ -51,7 +53,7 @@ const About = () => {
             size={"sm"}
             border={"1px solid"}
             borderColor={"#e8e8e8"}
-            color={"gray"}
+            color={colorMode === 'light' ? 'black' : 'white'}
             aria-label="Search database"
             icon={<FaLinkedin />}
           />
@@ -62,7 +64,7 @@ const About = () => {
             size={"sm"}
             border={"1px solid"}
             borderColor={"#e8e8e8"}
-            color={"gray"}
+            color={colorMode === 'light' ? 'black' : 'white'}
             aria-label="Search database"
             icon={<MdEmail />}
           />

@@ -8,10 +8,12 @@ import {
   Heading,
   Box,
   Code,
+  useColorMode,
 } from "@chakra-ui/react";
 import { FaLanguage } from "react-icons/fa";
 
 const Languages = () => {
+  const colorMode = useColorMode()
   // Define tus idiomas y niveles de competencia
   const languages = [
     { name: "Spanish", level: "Native", colorScheme: "blue" },
@@ -34,7 +36,7 @@ const Languages = () => {
             <Tag
               size="md"
               variant="subtle"
-              color={"black"}
+              color={colorMode === 'light' ? 'black' : 'white'}
               border={"1px solid"}
               borderColor={"#e8e8e8"}
             >
