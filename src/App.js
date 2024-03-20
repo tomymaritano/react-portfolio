@@ -14,7 +14,7 @@ function App() {
     <ChakraProvider theme={theme}>
       <Box width="100%" height="100%">
         <Box bg="green.400" w="100%" p={1} color="white" textAlign={"center"}>
-          This is the Box
+
         </Box>
         <Navbar />
         <Container maxW={"3xl"}>
