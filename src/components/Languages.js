@@ -7,6 +7,7 @@ import {
   TagLeftIcon,
   Heading,
   Box,
+  Code,
 } from "@chakra-ui/react";
 import { FaLanguage } from "react-icons/fa";
 
@@ -24,6 +25,9 @@ const Languages = () => {
       <Heading fontFamily={'monospace'} size={"md"} as={"h3"} pb={4}>
         Languages
       </Heading>
+      <Code colorScheme="purple" mb={4}>
+        Languages = ['Spanish', 'English', 'Italian', 'Portuguese'];
+      </Code>
       <Wrap spacing="1">
         {languages.map((language) => (
           <WrapItem key={language.name}>

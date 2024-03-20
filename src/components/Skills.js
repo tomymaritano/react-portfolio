@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, Tag, Wrap, WrapItem, Image } from "@chakra-ui/react";
+import { Box, Heading, Tag, Wrap, WrapItem, Image, Code } from "@chakra-ui/react";
 
 const Skills = () => {
   // Define tus habilidades
@@ -23,6 +23,9 @@ const Skills = () => {
       <Heading fontFamily={"monospace"} size={"md"} as={"h3"} pb={4}>
         Skills
       </Heading>
+      <Code colorScheme="" mb={4}>
+        git commit -m "Updates"
+      </Code>
       <Image
       w={'100%'}
         src="https://ghchart.rshah.org/tomymaritano"

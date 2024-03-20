@@ -24,6 +24,7 @@ const Github = () => {
   return (
     <Box>
       <Text>Mi Actividad de GitHub (Últimos 90 días de 2024):</Text>
+      
       {/* Renderiza aquí tus eventos filtrados */}
       {events.map((event, index) => (
         <Box key={index} p={2}>
