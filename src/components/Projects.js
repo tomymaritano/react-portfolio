@@ -134,7 +134,6 @@ const Projects = () => {
                     size="sm"
                     variant="subtle"
                     fontSize={"12px"}
-                    color={"black"}
                     border={"1px solid"}
                     borderColor={"#e8e8e8"}
                   >
