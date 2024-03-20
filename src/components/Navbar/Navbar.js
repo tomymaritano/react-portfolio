@@ -16,9 +16,19 @@ import {
 import TextAnimation from "../Bienvenida/Text";
 import { useColorMode } from "@chakra-ui/react";
 import { FaBlog } from "react-icons/fa";
+import { keyframes } from '@emotion/react';
+
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
   return (
     <Flex
       zIndex={1}
@@ -49,20 +59,10 @@ const Navbar = () => {
             mr={1}
             onClick={toggleColorMode}
             _hover={{ borderColor: "whiteAlpha.100", bg: "whiteAlpha.100" }}
-            // Aplica transiciones a las propiedades bg y color
-            transition="background-color 0.3s ease-out, color 0.3s ease-out"
-            // Estilos personalizados para la animación del icono
-            _focus={{
-              boxShadow: "none",
-            }}
+            // Aplicando la animación
             sx={{
               "& svg": {
-                // Transición para la rotación del icono
-                transition: "transform 0.3s ease-out",
-              },
-              "&:hover svg": {
-                // Rotar el icono en el hover
-                transform: "rotate(20deg)",
+                animation: `${spin} 1s linear infinite`,
               },
             }}
           />
