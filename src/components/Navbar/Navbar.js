@@ -16,19 +16,34 @@ import {
 import TextAnimation from "../Bienvenida/Text";
 import { useColorMode } from "@chakra-ui/react";
 import { FaBlog } from "react-icons/fa";
-import { keyframes } from '@emotion/react';
-
+import { keyframes } from "@emotion/react";
+import { useState } from "react";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const spin = keyframes`
-  from {
-    transform: rotate(0deg);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  // Función para manejar el clic, activa la animación y cambia el modo
+  const handleClick = () => {
+    setIsAnimating(true); // Activa la animación
+    setTimeout(() => {
+      toggleColorMode(); // Cambia el modo de color en la mitad de la animación
+    }, 500); // Ajusta este tiempo a la mitad de la duración total de la animación
+    setTimeout(() => setIsAnimating(false), 1000); // Asegura que la animación se complete
+  };
+
+  const rotateAndScale = keyframes`
+  0% {
+    transform: scale(1) rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(1.1) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
   }
 `;
+
   return (
     <Flex
       zIndex={1}
@@ -54,16 +69,15 @@ const Navbar = () => {
             size="sm"
             bg={colorMode === "light" ? "purple.300" : "#fbd38d"}
             color={colorMode === "light" ? "white" : "black"}
-            aria-label="Options"
+            aria-label="Change theme"
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             mr={1}
-            onClick={toggleColorMode}
-            _hover={{ borderColor: "whiteAlpha.100", bg: "whiteAlpha.100" }}
-            // Aplicando la animación
+            onClick={handleClick}
+            _hover={{ bg: colorMode === "light" ? "purple.400" : "#fac75a" }}
             sx={{
-              "& svg": {
-                animation: `${spin} 1s linear infinite`,
-              },
+              animation: isAnimating
+                ? `${rotateAndScale} 1s ease-in-out forwards`
+                : "none",
             }}
           />
           <MenuButton
