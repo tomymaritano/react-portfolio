@@ -16,9 +16,19 @@ import {
 import TextAnimation from "../Bienvenida/Text";
 import { useColorMode } from "@chakra-ui/react";
 import { FaBlog } from "react-icons/fa";
+/** Usando Emotion para definir la animación */
+import { keyframes } from "@emotion/react";
+import { css } from '@emotion/react';
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isAnimating, setIsAnimating] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();
+  const handleClick = () => {
+    setIsAnimating(true);
+    toggleColorMode();
+    setTimeout(() => setIsAnimating(false), 1000); // Asume que la animación dura 1 segundo
+  };
   return (
     <Flex
       zIndex={1}
@@ -29,7 +39,11 @@ const Navbar = () => {
       justifyContent={["space-between", "space-evenly"]} // Primero móvil, luego web
       backdropFilter="blur(10px)"
       borderBottom={"none"}
-      bg={colorMode === 'dark' ? 'rgb(32, 32, 36, 0.8)' : 'rgb(255, 255, 255, 0.8)'}
+      bg={
+        colorMode === "dark"
+          ? "rgb(32, 32, 36, 0.8)"
+          : "rgb(255, 255, 255, 0.8)"
+      }
     >
       <Box>
         <TextAnimation />
@@ -38,13 +52,13 @@ const Navbar = () => {
         <Menu>
           <IconButton
             size={"sm"}
-            bg={colorMode === 'light' ? 'purple.300' : '#fbd38d'}
-            color={colorMode === 'light' ? 'white' : 'black'}
+            bg={colorMode === "light" ? "purple.300" : "#fbd38d"}
+            color={colorMode === "light" ? "white" : "black"}
             aria-label="Options"
-            icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+            icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             variant=""
             mr={1}
-            onClick={toggleColorMode}
+            onClick={handleClick}
             _hover={{ borderColor: "whiteAlpha.100", bg: "white.alpha.100" }}
           />
           <MenuButton
@@ -57,12 +71,8 @@ const Navbar = () => {
             variant="outline"
           />
           <MenuList>
-            <MenuItem icon={<FaBlog />}>
-              Blog
-            </MenuItem>
-            <MenuItem icon={<ExternalLinkIcon />}>
-              Videogames
-            </MenuItem>
+            <MenuItem icon={<FaBlog />}>Blog</MenuItem>
+            <MenuItem icon={<ExternalLinkIcon />}>Videogames</MenuItem>
           </MenuList>
         </Menu>
       </Box>
