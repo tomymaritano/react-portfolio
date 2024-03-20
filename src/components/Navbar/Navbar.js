@@ -16,19 +16,9 @@ import {
 import TextAnimation from "../Bienvenida/Text";
 import { useColorMode } from "@chakra-ui/react";
 import { FaBlog } from "react-icons/fa";
-/** Usando Emotion para definir la animación */
-import { keyframes } from "@emotion/react";
-import { css } from '@emotion/react';
-import { useState } from "react";
 
 const Navbar = () => {
-  const [isAnimating, setIsAnimating] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();
-  const handleClick = () => {
-    setIsAnimating(true);
-    toggleColorMode();
-    setTimeout(() => setIsAnimating(false), 1000); // Asume que la animación dura 1 segundo
-  };
   return (
     <Flex
       zIndex={1}
@@ -51,15 +41,30 @@ const Navbar = () => {
       <Box>
         <Menu>
           <IconButton
-            size={"sm"}
+            size="sm"
             bg={colorMode === "light" ? "purple.300" : "#fbd38d"}
             color={colorMode === "light" ? "white" : "black"}
             aria-label="Options"
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-            variant=""
             mr={1}
-            onClick={handleClick}
-            _hover={{ borderColor: "whiteAlpha.100", bg: "white.alpha.100" }}
+            onClick={toggleColorMode}
+            _hover={{ borderColor: "whiteAlpha.100", bg: "whiteAlpha.100" }}
+            // Aplica transiciones a las propiedades bg y color
+            transition="background-color 0.3s ease-out, color 0.3s ease-out"
+            // Estilos personalizados para la animación del icono
+            _focus={{
+              boxShadow: "none",
+            }}
+            sx={{
+              "& svg": {
+                // Transición para la rotación del icono
+                transition: "transform 0.3s ease-out",
+              },
+              "&:hover svg": {
+                // Rotar el icono en el hover
+                transform: "rotate(20deg)",
+              },
+            }}
           />
           <MenuButton
             size={"sm"}
