@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Heading, Tag, Wrap, WrapItem, Image, Code } from "@chakra-ui/react";
 
 const Skills = () => {
-  // Define tus habilidades
+  // Lista de habilidades
   const skills = [
     "MongoDB",
     "Firebase",
@@ -19,28 +19,27 @@ const Skills = () => {
   ];
 
   return (
-
     <Box pb={4}>
-      <Heading fontFamily={"monospace"} size={"md"} as={"h3"} pb={4}>
-        Skills
+      <Heading fontFamily="monospace" size="md" as="h3" pb={4}>
+        GitHub
       </Heading>
-      <Code colorScheme="" mb={4}>
+      {/* <Code colorScheme="gray" mb={4}> // Especificar un colorScheme válido
         git commit -m "Updates"
-      </Code>
+      </Code> */}
       <Image
-      w={'100%'}
+        w="100%"
         src="https://ghchart.rshah.org/tomymaritano"
-        alt="Gráfico de Contribución de GitHub"
+        alt="GitHub Contribution Chart"
         pb={6}
       />
-      <Wrap spacing="1">
-        {skills.map((skill) => (
+      <Wrap spacing={2} justify="start">
+        {skills.map(skill => (
           <WrapItem key={skill}>
             <Tag
-              size="md"
-              variant="subtle"
-              border={"1px solid"}
-              borderColor={"#e8e8e8"}
+              size="sm" // Aumenta el tamaño para mejor legibilidad
+              borderRadius="full" // Agrega bordes redondeados para un look moderno
+              variant="solid" // Usa un fondo sólido para destacar las etiquetas
+              colorScheme="green" // Usa un esquema de colores para mejor contraste y coherencia visual
             >
               {skill}
             </Tag>

@@ -1,12 +1,36 @@
 import React, { useEffect, useState } from "react";
 import {
-  Box, Heading, Tag, Wrap, WrapItem, Text, SimpleGrid, Select, HStack, Switch
+  Box,
+  Heading,
+  Tag,
+  Wrap,
+  WrapItem,
+  Text,
+  SimpleGrid,
+  Select,
+  HStack,
+  Switch,
+  Image,
 } from "@chakra-ui/react";
 
-const Projects = () => {
+const ProjectsAndSkills = () => {
   const [projects, setProjects] = useState([]);
   const [selectedTech, setSelectedTech] = useState("All");
   const [showForks, setShowForks] = useState(false);
+  const skills = [
+    "MongoDB",
+    "Firebase",
+    "React",
+    "JavaScript",
+    "Node.js",
+    "Express",
+    "ElectronJS",
+    "Vue.js",
+    "HTML",
+    "CSS",
+    "Docker",
+    "Git",
+  ];
 
   useEffect(() => {
     fetch("https://api.github.com/users/tomymaritano/repos")
@@ -35,21 +59,18 @@ const Projects = () => {
 
   return (
     <Box p={4}>
-      <Heading fontFamily="monospace" size="md" as="h3" pb={4}>
-        Projects
+      <Heading fontFamily="monospace" size="lg" as="h2" mb={4}>
+        Projects & Skills
       </Heading>
 
-      <HStack justifyContent="space-between" alignItems="center">
-        <HStack>
-          <Text>Forks</Text>
-          <Switch
-            colorScheme="teal"
-            id="fork-switch"
-            isChecked={showForks}
-            onChange={handleShowForksChange}
-          />
-        </HStack>
-
+      <HStack justifyContent="space-between" alignItems="center" mb={4}>
+        <Text>Show Forks</Text>
+        <Switch
+          colorScheme="teal"
+          id="fork-switch"
+          isChecked={showForks}
+          onChange={handleShowForksChange}
+        />
         <Select
           onChange={handleTechChange}
           size="sm"
@@ -63,7 +84,7 @@ const Projects = () => {
         </Select>
       </HStack>
 
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={5} mt={4}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={5} mb={4}>
         {filteredProjects.map((project, index) => (
           <Box
             key={index}
@@ -81,7 +102,7 @@ const Projects = () => {
             <Wrap mt={2}>
               {project.technologies.map((tech, techIndex) => (
                 <WrapItem key={techIndex}>
-                  <Tag size="sm" variant="outline" colorScheme="green">
+                  <Tag size="sm" variant="solid" colorScheme="green">
                     {tech}
                   </Tag>
                 </WrapItem>
@@ -90,8 +111,30 @@ const Projects = () => {
           </Box>
         ))}
       </SimpleGrid>
+
+      <Image
+        w="100%"
+        src="https://ghchart.rshah.org/tomymaritano"
+        alt="GitHub Contribution Chart"
+        mb={4}
+      />
+      
+      <Wrap spacing={2} justify="start">
+        {skills.map(skill => (
+          <WrapItem key={skill}>
+            <Tag
+              size="md"
+              borderRadius="full"
+              variant="solid"
+              colorScheme="teal"
+            >
+              {skill}
+            </Tag>
+          </WrapItem>
+        ))}
+      </Wrap>
     </Box>
   );
 };
 
-export default Projects;
+export default ProjectsAndSkills;
