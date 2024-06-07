@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Box,
-  Code,
   HStack,
   Heading,
   IconButton,
@@ -11,7 +10,6 @@ import {
 } from '@chakra-ui/react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
-import { TiWorld } from 'react-icons/ti';
 import Languages from './Languages';
 
 const About = () => {
