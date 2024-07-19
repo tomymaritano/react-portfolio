@@ -7,32 +7,28 @@ import {
   TagLeftIcon,
   Heading,
   Box,
-  Code,
 } from "@chakra-ui/react";
 import { FaLanguage } from "react-icons/fa";
 
 const Languages = () => {
   // Definición de idiomas y niveles de competencia
   const languages = [
-    { name: "Spanish", level: "Native", colorScheme: "blue" },
-    { name: "Italian", level: "Fluent", colorScheme: "orange" },
-    { name: "English", level: "Professional", colorScheme: "purple" },
-    { name: "Portuguese", level: "Intermediate", colorScheme: "pink" },
+    { name: "Spanish", level: "Native", colorScheme: "gray" },
+    { name: "Italian", level: "Fluent", colorScheme: "gray" },
+    { name: "English", level: "Fluent", colorScheme: "gray" },
+    { name: "Portuguese", level: "Intermediate", colorScheme: "gray" },
   ];
 
   return (
-    <Box pb={4}>
+    <Box pb={4} pt={4}>
       <Heading fontFamily="monospace" size="md" as="h3" pb={4}>
         Languages
       </Heading>
-      <Code colorScheme="purple" mb={4}>
-        const languages = ['Spanish', 'English', 'Italian', 'Portuguese'];
-      </Code>
-      {/* <Wrap spacing={2} justify="start">
+  <Wrap spacing={2} justify="start">
         {languages.map((language) => (
           <WrapItem key={language.name}>
             <Tag
-              size="lg" // Tamaño más grande para mejor legibilidad
+              size="md" // Tamaño más grande para mejor legibilidad
               variant="solid" // Variante sólida para mayor visibilidad
               colorScheme={language.colorScheme} // Uso del esquema de color definido
               borderRadius="full" // Bordes redondeados para un estilo más moderno
@@ -43,7 +39,7 @@ const Languages = () => {
             </Tag>
           </WrapItem>
         ))}
-      </Wrap> */}
+      </Wrap> 
     </Box>
   );
 };

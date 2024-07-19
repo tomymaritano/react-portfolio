@@ -2,27 +2,26 @@ import {
   Box,
   Flex,
   IconButton,
+  Link,
   Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
 } from "@chakra-ui/react";
 import {
-  HamburgerIcon,
-  ExternalLinkIcon,
+  // HamburgerIcon,
+  // ExternalLinkIcon,
   SunIcon,
   MoonIcon,
 } from "@chakra-ui/icons";
 import TextAnimation from "../Bienvenida/Text";
 import { useColorMode } from "@chakra-ui/react";
-import { FaBlog } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { keyframes } from "@emotion/react";
 import { useState } from "react";
+import { MdEmail } from "react-icons/md";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const [isAnimating, setIsAnimating] = useState(false);
-
+  const borderColor = { light: 'black', dark: 'white' };
   // Función para manejar el clic, activa la animación y cambia el modo
   const handleClick = () => {
     setIsAnimating(true); // Activa la animación
@@ -80,7 +79,7 @@ const Navbar = () => {
                 : "none",
             }}
           />
-          <MenuButton
+          {/* <MenuButton
             size={"sm"}
             color={"gray"}
             borderColor={"gray"}
@@ -92,7 +91,27 @@ const Navbar = () => {
           <MenuList>
             <MenuItem icon={<FaBlog />}>Blog</MenuItem>
             <MenuItem icon={<ExternalLinkIcon />}>Videogames</MenuItem>
-          </MenuList>
+          </MenuList> */}        
+          <Link href="https://github.com/tomymaritano" isExternal>
+          <IconButton
+            aria-label="GitHub"
+            icon={<FaGithub />}
+            mr={1}
+            size="sm"
+            variant="solid"
+            borderColor={borderColor[colorMode]}
+          />
+        </Link>
+
+        <Link href="mailto:tomymaritano@gmail.com" isExternal>
+          <IconButton
+            aria-label="Email"
+            icon={<MdEmail />}
+            size="sm"
+            variant="solid"
+            borderColor={borderColor[colorMode]}
+          />
+        </Link>
         </Menu>
       </Box>
     </Flex>

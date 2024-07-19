@@ -1,40 +1,57 @@
-import { Heading, Text, Box, Code } from "@chakra-ui/react";
+import { Heading, Text, Box,  Button, Link, IconButton, useColorMode, HStack } from "@chakra-ui/react";
 import HoverImage from "./Image/ImageHover";
+import { FaLinkedin } from "react-icons/fa";
 
 const Perfil = () => {
+
+  const { colorMode } = useColorMode();
+  const borderColor = { light: 'black', dark: 'white' };
   return (
-    <Box 
-      display="flex" 
-      alignItems="center" 
-      py={8} 
+    <Box
+      display="flex"
+      alignItems="center"
+      py={8}
       justifyContent="space-between"
     >
       <Box w={{ base: '100%', md: '70%' }}>
-        <Heading 
-          fontSize="26px" 
-          as="h1" 
-          fontFamily="monospace" 
+        <Heading
+          fontSize="26px"
+          as="h1"
+          fontFamily="monospace"
           pb={4}
         >
-           Hey, I'm Tomy👋
+          Hey, I'm Tomy👋
         </Heading>
-        <Code 
-          colorScheme="green" 
+        <Text
+          bg={'#FCD144'}
+          width={'42%'}
+          fontWeight={'bold'}
           mb={4}
         >
-          Founder at DolarGaucho
-        </Code>
-        <Text fontSize="14px">
-          UX/UI Developer focused on building scalable web and mobile
-          applications with extra attention to details.
+          Product designer at <a href="http://www.unicoin.com" target="">Unicoin</a>
         </Text>
-        {/* <Button 
-          size="sm" 
-          mt={6} 
-          colorScheme="green"
-        >
-          Ver más
-        </Button> */}
+        <Text fontSize="14px">
+          Hello there, thank you for visiting my portfolio. Have a nice trip !
+        </Text>
+        <HStack pt={4}>
+          <Button
+            size="sm"
+            colorScheme="gray"
+          >
+            Download CV
+          </Button>
+
+          <Link href="https://www.linkedin.com/in/tomymaritano/" isExternal>
+            <IconButton
+              aria-label="LinkedIn"
+              icon={<FaLinkedin />}
+              size="sm"
+              variant="solid"
+              borderColor={borderColor[colorMode]}
+            />
+          </Link>
+        </HStack>
+
       </Box>
       <Box display={{ base: 'none', md: 'block' }}>
         <HoverImage
