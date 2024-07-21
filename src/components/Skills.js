@@ -19,7 +19,7 @@ const Skills = () => {
   ];
 
   return (
-    <Box pb={4}>
+    <Box pb={2} pt={10}>
       <Heading fontFamily="monospace" size="md" as="h3" pb={4}>
         GitHub
       </Heading>

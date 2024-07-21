@@ -58,7 +58,7 @@ const ProjectsAndSkills = () => {
   );
 
   return (
-    <Box p={4}>
+    <Box>
       <Heading fontFamily="monospace" size="lg" as="h2" mb={4}>
         Projects & Skills
       </Heading>
@@ -126,7 +126,7 @@ const ProjectsAndSkills = () => {
               size="md"
               borderRadius="full"
               variant="solid"
-              colorScheme="teal"
+              colorScheme="gray"
             >
               {skill}
             </Tag>

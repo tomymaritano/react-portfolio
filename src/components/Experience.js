@@ -29,8 +29,7 @@ const TimelineItem = ({ year, title, children }) => {
         position: "absolute",
       }}
     >
-      <Icon as={FaCircle} color={iconColor} boxSize={4} position="relative" left="-1" />
-      <Box pl={8}>
+      <Box>
         <Text fontWeight="bold" fontSize="lg">{year}</Text>
         <Heading size="md" mt={2} mb={2}>{title}</Heading>
         <Text fontSize="md">{children}</Text>
@@ -44,7 +43,7 @@ const Timeline = () => {
   const textColor = useColorModeValue('gray.800', 'white');
 
   return (
-    <MotionBox padding={5}  color={textColor}>
+    <MotionBox padding={0}  color={textColor}>
       <Heading as="h1" fontSize="2xl" mb={5}>Professional Timeline</Heading>
       <TimelineItem year="May 2024 - Present" title="UX Developer at Unicoin">
         At Unicoin, I collaborate closely with UX/UI designers to create innovative solutions...

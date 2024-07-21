@@ -34,8 +34,8 @@ const Projects = () => {
   );
 
   return (
-    <Box p={4}>
-      <Heading fontFamily="monospace" size="md" as="h3" pb={4}>
+    <Box p={0}>
+      <Heading fontFamily="monospace" size="lg" as="h2" pb={4}>
         Projects
       </Heading>
 

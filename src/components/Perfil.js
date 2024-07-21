@@ -15,7 +15,6 @@ const Perfil = () => {
     >
       <Box w={{ base: '100%', md: '70%' }}>
         <Heading
-          fontSize="26px"
           as="h1"
           fontFamily="monospace"
           pb={4}
@@ -59,6 +58,7 @@ const Perfil = () => {
           alt="Profile Picture of Tomy"
         />
       </Box>
+      
     </Box>
   );
 };

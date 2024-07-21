@@ -20,7 +20,7 @@ const Languages = () => {
   ];
 
   return (
-    <Box pb={4} pt={4}>
+    <Box pb={10} pt={5}>
       <Heading fontFamily="monospace" size="md" as="h3" pb={4}>
         Languages
       </Heading>
