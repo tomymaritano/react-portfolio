@@ -3,6 +3,7 @@ import {
   Flex,
   IconButton,
   Link,
+  Text,
   Menu,
 } from "@chakra-ui/react";
 import {
@@ -11,7 +12,6 @@ import {
   SunIcon,
   MoonIcon,
 } from "@chakra-ui/icons";
-import TextAnimation from "../Bienvenida/Text";
 import { useColorMode } from "@chakra-ui/react";
 import { FaGithub } from "react-icons/fa";
 import { keyframes } from "@emotion/react";
@@ -60,7 +60,10 @@ const Navbar = () => {
       }
     >
       <Box>
-        <TextAnimation />
+        <Text>
+
+        Tomy Maritano
+        </Text>
       </Box>
       <Box>
         <Menu>

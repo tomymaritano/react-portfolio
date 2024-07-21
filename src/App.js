@@ -1,15 +1,11 @@
 import * as React from "react";
-import { Box, ChakraProvider, Container,Text , theme } from "@chakra-ui/react";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
+import { Box, ChakraProvider, Container , theme } from "@chakra-ui/react";
 import About from "./components/About";
 import Perfil from "./components/Perfil";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar/Navbar";
-import Scene from "./components/Bienvenida/ThreeJS";
-import Carousel from "./components/Carrousel";
 import ProjectsAndSkills from "./components/ProjectsAndSkills";
-import MarqueeText from "./components/MarqueeText";
+import UX from "./components/UX";
 
 function App() {
   return (
@@ -17,11 +13,11 @@ function App() {
       <Box width="100%" height="100%">
 
         <Navbar />
-        <Container maxW="3xl">
-             <Scene />
+        <Container maxW="6xl">
+             
           <Perfil />
-          <Carousel />
           <About />
+          <UX />
           <ProjectsAndSkills />
           <Footer />
         </Container>

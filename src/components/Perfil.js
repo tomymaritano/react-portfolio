@@ -1,56 +1,37 @@
-import { Heading, Text, Box,  Button, Link, IconButton, useColorMode, HStack } from "@chakra-ui/react";
+import { Heading, Text, Box,} from "@chakra-ui/react";
 import HoverImage from "./Image/ImageHover";
-import { FaLinkedin } from "react-icons/fa";
-
+import Scene from "./Bienvenida/ThreeJS";
+import Carousel from "./Carrousel"
 const Perfil = () => {
 
-  const { colorMode } = useColorMode();
-  const borderColor = { light: 'black', dark: 'white' };
   return (
     <Box
       display="flex"
-      alignItems="center"
+      alignItems="start"
       py={8}
       justifyContent="space-between"
     >
-      <Box w={{ base: '100%', md: '70%' }}>
+      <Box w={{ base: '100%', md: '100%' }}>
         <Heading
-          as="h1"
+          size={'xl'}
           fontFamily="monospace"
-          pb={4}
+          mb={2}
         >
-          Hey, I'm Tomy👋
+          A bit of myself👋
         </Heading>
-        <Text
-          bg={'#FCD144'}
-          width={'42%'}
-          fontWeight={'bold'}
-          mb={4}
+        <Heading
+        size={'md'}
+        fontFamily={'monospace'}
+          mb={6}
         >
-          Product designer at <a href="http://www.unicoin.com" target="">Unicoin</a>
-        </Text>
+          Product designer at <a href="http://www.unicoin.com">Unicoin</a>
+        </Heading>
         <Text fontSize="14px">
-          Hello there, thank you for visiting my portfolio. Have a nice trip !
+I design and develop intuitive digital experiences for companies worldwide, combining user experience design with front-end development to deliver seamless and engaging products.
         </Text>
-        <HStack pt={4}>
-          <Button
-            size="sm"
-            colorScheme="gray"
-          >
-            Download CV
-          </Button>
-
-          <Link href="https://www.linkedin.com/in/tomymaritano/" isExternal>
-            <IconButton
-              aria-label="LinkedIn"
-              icon={<FaLinkedin />}
-              size="sm"
-              variant="solid"
-              borderColor={borderColor[colorMode]}
-            />
-          </Link>
-        </HStack>
-
+        <Scene />
+        <Carousel />
+        
       </Box>
       <Box display={{ base: 'none', md: 'block' }}>
         <HoverImage

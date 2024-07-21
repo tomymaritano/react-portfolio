@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, HStack, Image } from '@chakra-ui/react';
+import { Box, HStack,  Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 // Importación de imágenes
@@ -33,7 +33,7 @@ const Carousel = () => {
       <motion.div variants={marqueeVariants} animate="animate">
         <HStack spacing={20}>
           {images.map((src, index) => (
-            <Image key={index} height={9} src={src} />
+            <Image key={index}  src={src} />
           ))}
         </HStack>
       </motion.div>
